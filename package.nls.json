@@ -1,0 +1,15 @@
+{
+  "displayName": "Usage & Conversations Monitor for Claude Code",
+  "description": "Live Claude subscription limits, token usage and the state of your Claude Code conversations, right in the status bar.",
+  "cmd.showSessions": "Show conversations",
+  "cmd.refresh": "Refresh usage",
+  "config.claudeConfigDir": "Claude Code config directory. Empty = `$CLAUDE_CONFIG_DIR` or `~/.claude`.",
+  "config.planUsage.enabled": "Show subscription limits (5-hour session and weekly). Uses the OAuth login stored by Claude Code; the token is only sent to `api.anthropic.com`.",
+  "config.planUsage.refreshSeconds": "How often subscription limits are refreshed, in seconds (shared across windows).",
+  "config.sessions.scope": "Which Claude Code conversations to show.",
+  "config.sessions.scope.all": "Every conversation open in any VS Code window.",
+  "config.sessions.scope.workspace": "Only conversations of the folders open in this window.",
+  "config.notifications.onWaiting": "Notify when a conversation of this window needs an answer or a permission.",
+  "config.notifications.onDone": "Notify when a conversation of this window finishes its turn.",
+  "config.warningThreshold": "Usage percentage from which the status bar turns to warning color (red at 95%)."
+}

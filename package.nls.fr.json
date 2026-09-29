@@ -1,0 +1,15 @@
+{
+  "displayName": "Usage & Conversations Monitor for Claude Code",
+  "description": "Limites d'abonnement Claude, consommation de tokens et état des conversations Claude Code, en direct dans la barre d'état.",
+  "cmd.showSessions": "Afficher les conversations",
+  "cmd.refresh": "Rafraîchir l'usage",
+  "config.claudeConfigDir": "Dossier de configuration de Claude Code. Vide = `$CLAUDE_CONFIG_DIR` ou `~/.claude`.",
+  "config.planUsage.enabled": "Afficher les limites de l'abonnement (session de 5 h et semaine). Utilise la connexion OAuth enregistrée par Claude Code ; le token n'est envoyé qu'à `api.anthropic.com`.",
+  "config.planUsage.refreshSeconds": "Fréquence de rafraîchissement des limites, en secondes (partagée entre les fenêtres).",
+  "config.sessions.scope": "Conversations Claude Code à afficher.",
+  "config.sessions.scope.all": "Toutes les conversations ouvertes, dans n'importe quelle fenêtre VS Code.",
+  "config.sessions.scope.workspace": "Uniquement les conversations des dossiers ouverts dans cette fenêtre.",
+  "config.notifications.onWaiting": "Notifier quand une conversation de cette fenêtre attend une réponse ou une permission.",
+  "config.notifications.onDone": "Notifier quand une conversation de cette fenêtre a terminé son tour.",
+  "config.warningThreshold": "Pourcentage d'usage à partir duquel la barre d'état passe en orange (rouge à 95 %)."
+}

@@ -1,0 +1,108 @@
+{
+  "name": "claude-code-monitor",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "0.1.0",
+  "publisher": "brieuc-gide",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "usage",
+    "rate limit",
+    "status bar"
+  ],
+  "l10n": "./l10n",
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeMonitor.showSessions",
+        "title": "%cmd.showSessions%",
+        "category": "Claude Code Monitor"
+      },
+      {
+        "command": "claudeMonitor.refresh",
+        "title": "%cmd.refresh%",
+        "category": "Claude Code Monitor"
+      }
+    ],
+    "configuration": {
+      "title": "Claude Code Monitor",
+      "properties": {
+        "claudeMonitor.claudeConfigDir": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "%config.claudeConfigDir%"
+        },
+        "claudeMonitor.planUsage.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%config.planUsage.enabled%"
+        },
+        "claudeMonitor.planUsage.refreshSeconds": {
+          "type": "number",
+          "default": 120,
+          "minimum": 60,
+          "markdownDescription": "%config.planUsage.refreshSeconds%"
+        },
+        "claudeMonitor.sessions.scope": {
+          "type": "string",
+          "enum": [
+            "all",
+            "workspace"
+          ],
+          "enumDescriptions": [
+            "%config.sessions.scope.all%",
+            "%config.sessions.scope.workspace%"
+          ],
+          "default": "all",
+          "markdownDescription": "%config.sessions.scope%"
+        },
+        "claudeMonitor.notifications.onWaiting": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%config.notifications.onWaiting%"
+        },
+        "claudeMonitor.notifications.onDone": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%config.notifications.onDone%"
+        },
+        "claudeMonitor.warningThreshold": {
+          "type": "number",
+          "default": 80,
+          "minimum": 1,
+          "maximum": 100,
+          "markdownDescription": "%config.warningThreshold%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build -- --minify",
+    "build": "esbuild src/extension.ts --bundle --platform=node --target=node18 --external:vscode --outfile=dist/extension.js",
+    "watch": "npm run build -- --sourcemap --watch",
+    "typecheck": "tsc --noEmit",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "~1.90.0",
+    "@vscode/vsce": "^4.0.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.6.0"
+  }
+}
